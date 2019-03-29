@@ -4,4 +4,5 @@ Solutions for [LeetCode](https://leetcode.com).
 
 Finished list: 
 
-1. TwoSum
+1. Two Sum
+2. Add Two Numbers
