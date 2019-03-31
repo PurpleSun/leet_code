@@ -12,3 +12,4 @@ Finished list:
 6. ZigZag Conversion
 7. Reverse Integer
 8. String to Integer (atoi)
+9. Palindrome Number
