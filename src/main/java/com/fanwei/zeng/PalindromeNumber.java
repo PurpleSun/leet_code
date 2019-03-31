@@ -9,25 +9,25 @@ public class PalindromeNumber {
         final byte DECIMAL_10 = 10;
         byte[] array = new byte[11];
         byte j = 0;
-        int y = x;
         int quotient;
         byte remainder;
         while (true) {
-            quotient = y / DECIMAL_10;
-            remainder = (byte) (y % DECIMAL_10);
+            quotient = x / DECIMAL_10;
+            remainder = (byte) (x % DECIMAL_10);
             array[j] = remainder;
             j++;
 
-            y = quotient;
-            if (y == 0) {
+            x = quotient;
+            if (x == 0) {
                 break;
             }
         }
 
-        long reversed = 0;
-        for (int i = j - 1; i >= 0; i--) {
-            reversed += array[i] * Math.pow(DECIMAL_10, j - i - 1);
+        for (int low = 0, high = j - 1; low < high; low++, high--) {
+            if (array[low] != array[high]) {
+                return false;
+            }
         }
-        return x == reversed;
+        return true;
     }
 }
