@@ -57,7 +57,6 @@ public class RegularExpressionMatching {
 
         int i = 0;    // index of s
         int j = 0;    // index of p
-        boolean matched;
         int k;        // ending repeating index of s
         while (i < S_LENGTH && j < P_LENGTH) {
             if (j + 1 < P_LENGTH && p.charAt(j + 1) == ASTERISK) {
@@ -65,8 +64,7 @@ public class RegularExpressionMatching {
                 if (p.charAt(j) == DOT) {
                     // case: .*
                     for (k = i; k <= S_LENGTH; k++) {
-                        matched = this.isMatch(s.substring(k, S_LENGTH), p.substring(j + 2, P_LENGTH));
-                        if (matched) {
+                        if (this.isMatch(s.substring(k, S_LENGTH), p.substring(j + 2, P_LENGTH))) {
                             return true;
                         }
                     }
@@ -91,11 +89,9 @@ public class RegularExpressionMatching {
                         return this.isMatch(s.substring(i, S_LENGTH), p.substring(j + 2, P_LENGTH));
                     }
                 }
-
             } else {
                 // ending of p reached
-                matched = this.match(s.substring(i, i + 1), p.substring(j, j + 1));
-                if (!matched) {
+                if (!this.match(s.substring(i, i + 1), p.substring(j, j + 1))) {
                     return false;
                 } else {
                     j++;

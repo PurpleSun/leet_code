@@ -8,22 +8,14 @@ public class RegularExpressionMatchingTest {
 
     @Test
     public void match() {
-//        RegularExpressionMatching solution = new RegularExpressionMatching();
-//        assertFalse(solution.match("", "."));
-//        assertTrue(solution.match("a", "."));
-//        assertTrue(solution.match("b", "."));
-//        assertTrue(solution.match("c", "."));
-//        assertTrue(solution.match("c", "."));
-//        assertFalse(solution.match("ab", "."));
-//        assertFalse(solution.match("abc", "."));
-
-//        assertTrue(solution.match("", "*"));
-//        assertTrue(solution.match("a", "*"));
-//        assertTrue(solution.match("aa", "*"));
-//        assertTrue(solution.match("aaa", "*"));
-//        assertTrue(solution.match("aaaa", "*"));
-//        assertFalse(solution.match("ab", "*"));
-//        assertFalse(solution.match("abc", "*"));
+        RegularExpressionMatching solution = new RegularExpressionMatching();
+        assertFalse(solution.match("", "."));
+        assertTrue(solution.match("a", "."));
+        assertTrue(solution.match("b", "."));
+        assertTrue(solution.match("c", "."));
+        assertTrue(solution.match("c", "."));
+        assertFalse(solution.match("ab", "."));
+        assertFalse(solution.match("abc", "."));
     }
 
     @Test
@@ -44,7 +36,6 @@ public class RegularExpressionMatchingTest {
         assertTrue(solution.isMatch("a", "a*a"));
         assertTrue(solution.isMatch("bbbba", ".*a*a"));
         assertTrue(solution.isMatch("abbbcd", "ab*bbbcd"));
-
         assertTrue(solution.isMatch("abbbaabccbaabacab", "ab*b*b*bc*ac*.*bb*"));
     }
 }
