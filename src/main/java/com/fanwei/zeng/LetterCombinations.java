@@ -54,6 +54,7 @@ public class LetterCombinations {
 
     public List<String> letterCombinations(String digits) {
         List<String> res = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < digits.length(); i++) {
             if (i == 0) {
                 res = PHONE_MAP.get(digits.charAt(i));
@@ -67,8 +68,9 @@ public class LetterCombinations {
                 List<String> temp = new ArrayList<>(size);
                 for (String xStr : xList) {
                     for (String yStr : yList) {
-                        String combination = xStr + yStr;
-                        temp.add(combination);
+                        sb.append(xStr).append(yStr);
+                        temp.add(sb.toString());
+                        sb.delete(0, sb.length());
                     }
                 }
                 res = temp;

@@ -5,7 +5,7 @@ public class MergeLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode left = l1;
         ListNode right = l2;
-        ListNode newHead = null;
+        ListNode newHeader = null;
         ListNode pointer = null;
         while (left != null && right != null) {
             ListNode ListNode;
@@ -16,8 +16,8 @@ public class MergeLists {
                 ListNode = new ListNode(right.val);
                 right = right.next;
             }
-            if (newHead == null) {
-                newHead = ListNode;
+            if (newHeader == null) {
+                newHeader = ListNode;
                 pointer = ListNode;
             } else {
                 pointer.next = ListNode;
@@ -28,8 +28,8 @@ public class MergeLists {
         for (ListNode node : new ListNode[]{left, right}) {
             while (node != null) {
                 ListNode ListNode = new ListNode(node.val);
-                if (newHead == null) {
-                    newHead = ListNode;
+                if (newHeader == null) {
+                    newHeader = ListNode;
                     pointer = ListNode;
                 } else {
                     pointer.next = ListNode;
@@ -39,6 +39,6 @@ public class MergeLists {
             }
         }
 
-        return newHead;
+        return newHeader;
     }
 }
