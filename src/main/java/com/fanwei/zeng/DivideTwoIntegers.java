@@ -10,31 +10,27 @@ public class DivideTwoIntegers {
             return dividend;
         }
 
-        long a = dividend;
-        long b = divisor;
+        long x = dividend;
+        long y = divisor;
         boolean isMinus = false;
-        if (a < 0) {
+        if (x < 0) {
             isMinus = !isMinus;
-            a = -a;
+            x = -x;
         }
-        if (b < 0) {
+        if (y < 0) {
             isMinus = !isMinus;
-            b = -b;
+            y = -y;
         }
 
         int ret = 0;
-        final int HALF_MAX = Integer.MAX_VALUE >> 1;
-        while (a >= b) {
+        while (x >= y) {
             int exponent = 0;
-            long temp = b;
-            while ((temp = temp << 1) < a) {
+            long temp = y;
+            while ((temp = temp << 1) < x) {
                 exponent++;
-                if (temp >= HALF_MAX) {
-                    break;
-                }
             }
             ret += 1 << exponent;
-            a -= b << exponent;
+            x -= y << exponent;
         }
 
         if (isMinus) {
@@ -46,7 +42,7 @@ public class DivideTwoIntegers {
 
     public static void main(String[] args) {
         DivideTwoIntegers solution = new DivideTwoIntegers();
-        System.out.println(solution.divide(10, 3));
+        System.out.println(solution.divide(9, 3));
         System.out.println(solution.divide(7, -3));
         System.out.println(solution.divide(1, 1));
         System.out.println(solution.divide(-2147483648, -1));
